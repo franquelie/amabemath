@@ -6,10 +6,10 @@ import android.graphics.Paint;
 
 import androidx.core.content.ContextCompat;
 
-import com.example.gameuntitled.R;
+import com.amabe.math.R;
 
 /**
- * YouDied is a panel which draws the text You Died to the screen.
+ * Death is a panel which draws a text to the screen when the player dies.
  */
 
 public class Death {
