@@ -16,7 +16,7 @@ import com.amabe.math.gameobject.Player;
 import com.amabe.math.gameobject.Spell;
 import com.amabe.math.gamepanel.Joystick;
 import com.amabe.math.gamepanel.Performance;
-import com.amabe.math.gamepanel.YouDied;
+import com.amabe.math.gamepanel.Death;
 import com.amabe.math.graphics.SpriteSheet;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     private GameLoop gameLoop;
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     private List<Spell> spellList = new ArrayList<Spell>();
-    private YouDied youDied;
+    private Death death;
     private Performance performance;
     private GameDisplay gameDisplay;
 
@@ -49,7 +49,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
         // Initialize game panels
         performance = new Performance(context, gameLoop);
-        youDied = new YouDied(context);
+        death = new Death(context);
         joystick = new Joystick(275, 700, 70, 40);
 
         // Initialize game objects
@@ -147,7 +147,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
 
         // Draw You Died if HealthBar <= 0
         if (player.getHealthPoints() <= 0) {
-            youDied.draw(canvas);
+            death.draw(canvas);
         }
 
     }
