@@ -22,6 +22,10 @@ public class SpriteSheet {
         return new Sprite(this, new Rect(0, 0, 64, 64));
     }
 
+    public Sprite getPythagorasSprite(int x, int y, int width, int height) {
+        return new Sprite(this, new Rect(65, 0, 129, 64));
+    }
+
     public Bitmap getBitmap() {
         return bitmap;
     }
