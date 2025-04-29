@@ -57,7 +57,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Initialize game objects
         SpriteSheet spriteSheet = new SpriteSheet(context);
         player = new Player(context, joystick, 2*500, 500, 32, spriteSheet.getPlayerSprite(0, 0, 64, 64));
-        pythagoras = new NPC(context, R.color.enemy, 1000, 800, 30, spriteSheet.getPythagorasSprite(0,0,64,64));
+        pythagoras = new NPC(context, R.color.npc, 1000, 800, 30, spriteSheet.getPythagorasSprite(65, 0, 129, 64));
 
         // Initialize game display and center it around the player
         DisplayMetrics displayMetrics = new DisplayMetrics();
