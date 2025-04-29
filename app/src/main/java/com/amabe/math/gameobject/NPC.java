@@ -1,6 +1,7 @@
 package com.amabe.math.gameobject;
 
 import android.content.Context;
+import android.graphics.Canvas;
 
 import androidx.core.content.ContextCompat;
 
@@ -22,5 +23,10 @@ public class NPC extends Circle {
     @Override
     public void update() {
 
+    }
+
+    // Draw method copied from player moving around the screen
+    public void draw(Canvas canvas) {
+        sprite.draw(canvas, (int) positionX - sprite.getWidth()/2, (int) positionY - sprite.getHeight()/2);
     }
 }
