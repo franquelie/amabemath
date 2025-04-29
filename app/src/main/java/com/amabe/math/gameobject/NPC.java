@@ -1,0 +1,26 @@
+package com.amabe.math.gameobject;
+
+import android.content.Context;
+
+import androidx.core.content.ContextCompat;
+
+import com.amabe.math.R;
+import com.amabe.math.graphics.Sprite;
+
+/**
+ * Pythagoras is an NPC that appears in the classroom.
+ * He will give quiz questions to the students.
+ */
+public class NPC extends Circle {
+    private Sprite sprite;
+
+    public NPC(Context context, int color, double positionX, double positionY, double radius, Sprite sprite) {
+        super(context, ContextCompat.getColor(context, R.color.npc), positionX, positionY, radius);
+        this.sprite = sprite;
+    }
+
+    @Override
+    public void update() {
+
+    }
+}
