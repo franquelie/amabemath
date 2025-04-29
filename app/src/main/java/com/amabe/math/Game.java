@@ -12,6 +12,7 @@ import android.view.SurfaceView;
 import com.amabe.math.gamemap.Tilemap;
 import com.amabe.math.gameobject.Circle;
 import com.amabe.math.gameobject.Enemy;
+import com.amabe.math.gameobject.NPC;
 import com.amabe.math.gameobject.Player;
 import com.amabe.math.gameobject.Spell;
 import com.amabe.math.gamepanel.Joystick;
@@ -31,6 +32,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     private final Tilemap tilemap;
     private final Joystick joystick;
     private final Player player;
+    private NPC pythagoras;
     private GameLoop gameLoop;
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     private List<Spell> spellList = new ArrayList<Spell>();
@@ -55,6 +57,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Initialize game objects
         SpriteSheet spriteSheet = new SpriteSheet(context);
         player = new Player(context, joystick, 2*500, 500, 32, spriteSheet.getPlayerSprite(0, 0, 64, 64));
+        pythagoras = new NPC(context, R.color.enemy, 1000, 800, 30, spriteSheet.getPythagorasSprite(0,0,64,64));
 
         // Initialize game display and center it around the player
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -132,6 +135,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Draw game objects
         // player.draw(canvas, gameDisplay); Turning off Center player
         player.draw(canvas);
+        pythagoras.draw(canvas);
 
         for (Enemy enemy : enemyList) {
             enemy.draw(canvas, gameDisplay);
