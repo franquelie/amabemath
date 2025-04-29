@@ -19,7 +19,9 @@ abstract class Tile {
         GROUND_TILE,
         GRASS_TILE,
         TREE_TILE,
-        WALL_TILE
+        WALL_TILE,
+        WOOD_DOOR_TILE,
+        STEEL_DOOR_TILE
     }
 
     public static Tile getTile(int idxTileType, SpriteSheet spriteSheet, Rect mapLocationRect) {
@@ -38,6 +40,10 @@ abstract class Tile {
                 return new TreeTile(spriteSheet, mapLocationRect);
             case WALL_TILE:
                 return new WallTile(spriteSheet, mapLocationRect);
+            case WOOD_DOOR_TILE:
+                return new WoodDoorTile(spriteSheet, mapLocationRect);
+            case STEEL_DOOR_TILE:
+                return new SteelDoorTile(spriteSheet, mapLocationRect);
             default:
                 return null;
         }

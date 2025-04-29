@@ -50,6 +50,14 @@ public class SpriteSheet {
         return getSpriteByIndex(2, 0);
     }
 
+    public Sprite getWoodDoorSprite() {
+        return getSpriteByIndex(2, 2);
+    }
+
+    public Sprite getSteelDoorSprite() {
+        return getSpriteByIndex(2, 2);
+    }
+
     private Sprite getSpriteByIndex(int idxRow, int idxCol) {
         return new Sprite(this, new Rect(
                 idxCol*SPRITE_WIDTH_PIXELS,
