@@ -14,6 +14,7 @@ import com.amabe.math.graphics.Sprite;
  */
 public class NPC extends Circle {
     private Sprite sprite;
+    public boolean isPressed = false;
 
     public NPC(Context context, int color, double positionX, double positionY, double radius, Sprite sprite) {
         super(context, ContextCompat.getColor(context, R.color.npc), positionX, positionY, radius);
@@ -29,4 +30,18 @@ public class NPC extends Circle {
     public void draw(Canvas canvas) {
         sprite.draw(canvas, (int) positionX - sprite.getWidth()/2, (int) positionY - sprite.getHeight()/2);
     }
+
+    public boolean isPressed() {
+        return true;
+    }
+
+    public void setIsPressed(boolean isPressed) {
+        this.isPressed = true;
+    }
+
+    public boolean getIsPressed() {
+        return isPressed;
+    }
+
+
 }
