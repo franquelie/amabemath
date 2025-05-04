@@ -16,6 +16,7 @@ import com.amabe.math.gameobject.NPC;
 import com.amabe.math.gameobject.Player;
 import com.amabe.math.gameobject.Spell;
 import com.amabe.math.gamepanel.Joystick;
+import com.amabe.math.gamepanel.NewPanel;
 import com.amabe.math.gamepanel.Performance;
 import com.amabe.math.gamepanel.Death;
 import com.amabe.math.graphics.SpriteSheet;
@@ -32,13 +33,14 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
     private final Tilemap tilemap;
     private final Joystick joystick;
     private final Player player;
-    private NPC pythagoras;
+    public NPC pythagoras;
     private GameLoop gameLoop;
     private List<Enemy> enemyList = new ArrayList<Enemy>();
     private List<Spell> spellList = new ArrayList<Spell>();
     private Death death;
     private Performance performance;
     private GameDisplay gameDisplay;
+    private NewPanel newPanel;
 
     public Game(Context context) {
         super(context);
@@ -53,6 +55,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         performance = new Performance(context, gameLoop);
         death = new Death(context);
         joystick = new Joystick(275, 700, 70, 40);
+        newPanel = new NewPanel(context);
 
         // Initialize game objects
         SpriteSheet spriteSheet = new SpriteSheet(context);
@@ -78,12 +81,18 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Ep. 08 - Spells and multi touch handling
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                if (joystick.getIsPressed()) {
+                if (pythagoras.getIsPressed()) {
+                    // Draw method making sure pythagoras.getIsPressed() is false
+                    newPanel.draw(new Canvas(), pythagoras);
+                } else if (joystick.getIsPressed()) {
                     // Joystick was pressed before this event -> cast spell
                     spellList.add(new Spell(getContext(), player));
                 } else if (joystick.isPressed((double) event.getX(), (double) event.getY())) {
                     // Joystick is pressed in this event -> setIsPressed(true)
                     joystick.setIsPressed(true);
+                } else if (pythagoras.isPressed()) {
+                    // Pythagoras was pressed -> draw NewPanel
+                    pythagoras.setIsPressed(true);
                 } else {
                     // Joystick was not pressed previously, and is not pressed in this event -> cast spell
                     spellList.add(new Spell(getContext(), player));
@@ -147,6 +156,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Draw game panels
         joystick.draw(canvas);
         performance.draw(canvas);
+        newPanel.draw(canvas, pythagoras);
 
         // Draw You Died if HealthBar <= 0
         if (player.getHealthPoints() <= 0) {
@@ -159,6 +169,7 @@ class Game extends SurfaceView implements SurfaceHolder.Callback {
         // Update game state
         joystick.update();
         player.update();
+        newPanel.update(getContext(), pythagoras);
 
         // Spawn enemy if it is time to spawn new enemies
         if(Enemy.readyToSpawn()) {
