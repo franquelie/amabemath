@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: b3ef20cdf55f0e4459fc636430254aea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1304954660694923666
+    second: npc pythagoras_0
+  - first:
+      213: 6019165562399774085
+    second: npc pythagoras_1
+  - first:
+      213: -1249726052481051807
+    second: npc pythagoras_2
+  - first:
+      213: 9177286509853426524
+    second: npc pythagoras_3
+  - first:
+      213: -5918174446688660030
+    second: npc pythagoras_4
+  - first:
+      213: 2921753226864078582
+    second: npc pythagoras_5
+  - first:
+      213: -7600913482632140162
+    second: npc pythagoras_6
+  - first:
+      213: -1418576830001537264
+    second: npc pythagoras_7
+  - first:
+      213: 1697038956746185375
+    second: npc pythagoras_8
+  - first:
+      213: 8664866770808050420
+    second: npc pythagoras_9
+  - first:
+      213: -5536407909560165080
+    second: npc pythagoras_10
+  - first:
+      213: 1543899111390478849
+    second: npc pythagoras_11
+  - first:
+      213: -4280575487480786422
+    second: npc pythagoras_12
+  - first:
+      213: -3590537122011834331
+    second: npc pythagoras_13
+  - first:
+      213: 6132167187704599239
+    second: npc pythagoras_14
+  - first:
+      213: 7569726644887881274
+    second: npc pythagoras_15
+  - first:
+      213: 2257888493107825616
+    second: npc pythagoras_16
+  - first:
+      213: -3006827171179974872
+    second: npc pythagoras_17
+  - first:
+      213: 300418558262695405
+    second: npc pythagoras_18
+  - first:
+      213: -8006462871637381893
+    second: npc pythagoras_19
+  - first:
+      213: -3203182977763734261
+    second: npc pythagoras_20
+  - first:
+      213: -5587365352029624175
+    second: npc pythagoras_21
+  - first:
+      213: 7015933558483594495
+    second: npc pythagoras_22
+  - first:
+      213: 7885557000803135298
+    second: npc pythagoras_23
+  - first:
+      213: -6453503905543242908
+    second: npc pythagoras_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: npc pythagoras_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 441
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66e94966aed3ede0800000000000000
+      internalID: -1304954660694923666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 441
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5855a17203f588350800000000000000
+      internalID: 6019165562399774085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 441
+        width: 31
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163d05fc6c418aee0800000000000000
+      internalID: -1249726052481051807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_3
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 441
+        width: 31
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c534cc515754c5f70800000000000000
+      internalID: 9177286509853426524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_4
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 442
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5145252bb6edda0800000000000000
+      internalID: -5918174446688660030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 386
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fea59864172c8820800000000000000
+      internalID: 2921753226864078582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 340
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7aeb3b7571248690800000000000000
+      internalID: -7600913482632140162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 340
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f982993e3305ce0800000000000000
+      internalID: -1418576830001537264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 386
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a1bda90f71d8710800000000000000
+      internalID: 1697038956746185375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_9
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 339
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2991c6b6acf3870800000000000000
+      internalID: 8664866770808050420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_10
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 386
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dd003e65aba23b0800000000000000
+      internalID: -5536407909560165080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_11
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 340
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1028877df080d6510800000000000000
+      internalID: 1543899111390478849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_12
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 386
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02967a06475894c0800000000000000
+      internalID: -4280575487480786422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_13
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 386
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52891a1d289db2ec0800000000000000
+      internalID: -3590537122011834331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_14
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 340
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2507e4195d91550800000000000000
+      internalID: 6132167187704599239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 286
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a360a5307421d0960800000000000000
+      internalID: 7569726644887881274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_16
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 286
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db42262f91a55f10800000000000000
+      internalID: 2257888493107825616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_17
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 286
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f23d06e9a9546d0800000000000000
+      internalID: -3006827171179974872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_18
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 286
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5de29461d4b2400800000000000000
+      internalID: 300418558262695405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_19
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 286
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc23b4307453e090800000000000000
+      internalID: -8006462871637381893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_20
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 231
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d80db8d020c83d0800000000000000
+      internalID: -3203182977763734261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_21
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 230
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198e2f1c0d0b572b0800000000000000
+      internalID: -5587365352029624175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_22
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 230
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc2821466a9d5160800000000000000
+      internalID: 7015933558483594495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_23
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 231
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f27f010502f6d60800000000000000
+      internalID: 7885557000803135298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc pythagoras_24
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 232
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bbf79d36c8076a0800000000000000
+      internalID: -6453503905543242908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      npc pythagoras_0: -1304954660694923666
+      npc pythagoras_1: 6019165562399774085
+      npc pythagoras_10: -5536407909560165080
+      npc pythagoras_11: 1543899111390478849
+      npc pythagoras_12: -4280575487480786422
+      npc pythagoras_13: -3590537122011834331
+      npc pythagoras_14: 6132167187704599239
+      npc pythagoras_15: 7569726644887881274
+      npc pythagoras_16: 2257888493107825616
+      npc pythagoras_17: -3006827171179974872
+      npc pythagoras_18: 300418558262695405
+      npc pythagoras_19: -8006462871637381893
+      npc pythagoras_2: -1249726052481051807
+      npc pythagoras_20: -3203182977763734261
+      npc pythagoras_21: -5587365352029624175
+      npc pythagoras_22: 7015933558483594495
+      npc pythagoras_23: 7885557000803135298
+      npc pythagoras_24: -6453503905543242908
+      npc pythagoras_3: 9177286509853426524
+      npc pythagoras_4: -5918174446688660030
+      npc pythagoras_5: 2921753226864078582
+      npc pythagoras_6: -7600913482632140162
+      npc pythagoras_7: -1418576830001537264
+      npc pythagoras_8: 1697038956746185375
+      npc pythagoras_9: 8664866770808050420
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
