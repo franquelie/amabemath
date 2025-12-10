@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da02f00897196e49953538d02be7d9a, type: 3}
+  m_Name: Qts
+  m_EditorClassIdentifier: 
+  questions:
+  - questionText: Closed plane figure connected by three or more sides having common
+      vertice
+    choices:
+    - Polygon
+    - Triangle
+    - Diagonal
+    - Circle
+    correctChoiceIndex: 0
+    explanation: 
+  - questionText: Line segment connecting any two non-consecutive vertices of a polygon
+    choices:
+    - Line
+    - Angles
+    - Side
+    - Diagonal
+    correctChoiceIndex: 3
+    explanation: 
+  - questionText: How many interior angles does an Octagon has?
+    choices:
+    - 5
+    - 6
+    - 7
+    - 8
+    correctChoiceIndex: 3
+    explanation: 
+  - questionText: In a polygon, the number of sides is equal to the number of angles?
+    choices:
+    - Always true
+    - Sometimes true
+    - 'Never true '
+    - 'All of the above '
+    correctChoiceIndex: 0
+    explanation: 
+  - questionText: What is the sum of the interior angles of a regular hexagon?
+    choices:
+    - "540\xB0"
+    - "720\xB0"
+    - "900\xB0"
+    - "1080\xB0"
+    correctChoiceIndex: 1
+    explanation: 
+  - questionText: "The interior angle is 120\xB0, what is the measure of the exterior
+      angle?"
+    choices:
+    - "40\xB0 "
+    - "50\xB0"
+    - "60\xB0"
+    - "70\xB0"
+    correctChoiceIndex: 2
+    explanation: 
