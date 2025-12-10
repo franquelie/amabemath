@@ -9,16 +9,22 @@ public class DialogManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogText;
+    [SerializeField] GameObject enterQuizMode;
 
+    [SerializeField] Button takeQuizButton;
+    [SerializeField] GameObject multipleChoice;
+    
     [SerializeField] int lettersPerSecond;
 
     public event Action OnShowDialog;
     public event Action OnHideDialog;
     public static DialogManager Instance { get; private set; }
+    [SerializeField] private QuestionManager questionManager;
 
     private void Awake()
     {
         Instance = this;
+        takeQuizButton.onClick.AddListener(TakeQuiz);
     }
 
     Dialog dialog;
@@ -40,15 +46,21 @@ public class DialogManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && !isTyping)
         {
             ++currentLine;
-            if (currentLine < dialog.Lines.Count)
+            if (currentLine < dialog.Lines.Count - 1)
             {
                 StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
             }
+            else if (currentLine == dialog.Lines.Count - 1)
+            {
+                StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
+                // yield return new WaitForSeconds(2f);
+                enterQuizMode.SetActive(true);
+            }
             else
             {
-                dialogBox.SetActive(false);
+                /* dialogBox.SetActive(false);
                 currentLine = 0;
-                OnHideDialog?.Invoke();
+                OnHideDialog?.Invoke(); */
             }
         }
     }
@@ -63,5 +75,14 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(1f / lettersPerSecond);
         }
         isTyping = false;
+    }
+
+    public void TakeQuiz()
+    {
+        enterQuizMode.SetActive(false);
+        multipleChoice.SetActive(true); // Ideally appears after Question 1 appears
+        currentLine = 0;
+
+        questionManager.StartQuiz(); // Change dialog box text to Question 1
     }
 }
