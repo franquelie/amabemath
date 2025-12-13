@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
             if (input != Vector2.zero)
             {
 
-                // animator.SetFloat("moveX", input.x); Temporarily disabled this during firebase implementation
-                // animator.SetFloat("moveY", input.y); Temporarily disabled this during firebase implementation
+                animator.SetFloat("moveX", input.x); 
+                animator.SetFloat("moveY", input.y); 
 
                 var targetPos = transform.position;
                 targetPos.x += input.x;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // animator.SetBool("isMoving", isMoving); Temporarily disabled this during firebase implementation
+        animator.SetBool("isMoving", isMoving);
 
 
         if (Input.GetKeyDown(KeyCode.Z))

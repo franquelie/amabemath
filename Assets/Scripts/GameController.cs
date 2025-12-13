@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum GameState {FreeRoam, Dialog, Battle}
+public enum GameState {Login, FreeRoam, Dialog, Battle}
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
 
     GameState state;
+
+    public static GameController Instance { get; private set; }
+
+    void Awake() => Instance = this;
+    public void SetState(GameState newState) => state = newState;
 
     private void Start()
     {

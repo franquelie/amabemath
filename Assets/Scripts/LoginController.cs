@@ -26,6 +26,7 @@ public class LoginController : MonoBehaviour
     void Start()
     {
         loginPanel.SetActive(true);
+        GameController.Instance.SetState(GameState.Login);
 
         InitializeFirebase();
         if (loginButton != null)
@@ -69,6 +70,7 @@ public class LoginController : MonoBehaviour
             loginPanel.SetActive(false);
             gameMap.SetActive(true);
             player.SetActive(true);
+            GameController.Instance.SetState(GameState.FreeRoam);
             nonPlayerCharacter.SetActive(true);
 
             playerNickname.text = !string.IsNullOrEmpty(signedInUser.DisplayName)
