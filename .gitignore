@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# FirebaseAuth unitypackage
+/[Aa]ssets/[Ff]irebase.meta
+/[Aa]ssets/[Ff]irebase/*
+/[Aa]ssets/[Ee]xternalDependencyManager.meta
+/[Aa]ssets/[Ee]xternalDependencyManager/*
+/[Aa]ssets/[Pp]lugins.meta
+/[Aa]ssets/[Pp]lugins/*
