@@ -78,3 +78,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ee]xternalDependencyManager/*
 /[Aa]ssets/[Pp]lugins.meta
 /[Aa]ssets/[Pp]lugins/*
+
+# Firebase Security
+google-services.json
+google-services-desktop.json

@@ -11,12 +11,13 @@ using Firebase.Extensions;
 
 public class LoginController : MonoBehaviour
 {
-    public GameObject loginPanel, gameMap, player, profilePanel, nonPlayerCharacter;
+    public GameObject loginPanel, notificationPanel;
+    public GameObject gameMap, player, profilePanel, nonPlayerCharacter;
     
     public InputField studentIdField, PasswordField;
-    public Button loginButton;
+    public Button loginButton, closeButton;
 
-    public Text playerNickname;
+    public Text errorMessage, playerNickname;
 
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
@@ -43,6 +44,13 @@ public class LoginController : MonoBehaviour
         if (string.IsNullOrEmpty(studentId) || string.IsNullOrEmpty(password))
         {
             Debug.Log("Please enter both Student ID and Password.");
+            Exception exception = new Exception("Missing credentials");
+            Firebase.FirebaseException firebaseEx = exception as Firebase.FirebaseException;
+            if (firebaseEx != null)
+            {
+                var errorCode = (AuthError)firebaseEx.ErrorCode;
+                ShowNotificationMessage(GetErrorMessage(errorCode));
+            }
             return;
         }
 
@@ -57,7 +65,18 @@ public class LoginController : MonoBehaviour
             if (task.IsFaulted)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                
                 // TODO: show error to user via UI
+                foreach (Exception exception in task.Exception.Flatten().InnerExceptions)
+                {
+                    Firebase.FirebaseException firebaseEx = exception as Firebase.FirebaseException;
+                    if (firebaseEx != null)
+                    {
+                        var errorCode = (AuthError)firebaseEx.ErrorCode;
+                        ShowNotificationMessage(GetErrorMessage(errorCode));
+                    }
+                }
+
                 return;
             }
 
@@ -76,8 +95,8 @@ public class LoginController : MonoBehaviour
             playerNickname.text = !string.IsNullOrEmpty(signedInUser.DisplayName)
                 ? signedInUser.DisplayName
                 : (signedInUser.Email ?? studentId);
+            
             profilePanel.SetActive(true);
-
             isSignedIn = true;
             user = signedInUser;
         });
@@ -131,6 +150,38 @@ public class LoginController : MonoBehaviour
             Debug.Log("User profile updated successfully.");
         });
         }       
+    }
+
+    private void ShowNotificationMessage(string message)
+    {
+        errorMessage.text = message;
+        notificationPanel.SetActive(true);
+
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(CloseNotificationMessage);
+        }
+        
+    }
+
+    private void CloseNotificationMessage()
+    {
+        notificationPanel.SetActive(false);
+    }
+
+    private static string GetErrorMessage(AuthError errorCode)
+    {
+        var message = "";
+        switch (errorCode)
+        {
+            case AuthError.InvalidEmail:
+                message = "Unregistered Student ID. Please make sure you type correctly.";
+                break;
+            default:
+                message = "Incorrect Student ID or Password. Please try again.";
+                break;
+        }
+        return message;
     }
 
 
