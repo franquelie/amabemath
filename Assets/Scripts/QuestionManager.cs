@@ -2,6 +2,10 @@ using System;
 using System.Collections; // using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
+using Firebase;
+using Firebase.Auth;
+using Firebase.Database;
+using Firebase.Extensions;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -10,12 +14,16 @@ public class QuestionManager : MonoBehaviour
     public Text FinalScoreText;
     public Button[] choiceButtons;
     public QtsData qtsData; // Reference to the scriptable object containing questions
-    public GameObject Correct;
-    public GameObject Incorrect;
+    public GameObject Correct, Incorrect;
+    public GameObject Reward, Consolation;
     public GameObject GameFinished;
 
     private int currentQuestion = 0;
     private int score = 0;
+    // Firebase
+    private FirebaseAuth auth;
+    private DatabaseReference dbRootRef;
+    private const string usersNode = "users";
 
     public void StartQuiz() // Start()
     {
@@ -23,6 +31,9 @@ public class QuestionManager : MonoBehaviour
         Correct.gameObject.SetActive(false);
         Incorrect.gameObject.SetActive(false);
         GameFinished.gameObject.SetActive(false);
+        // Initialize Firebase references
+        auth = FirebaseAuth.DefaultInstance;
+        dbRootRef = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     void SetQuestion(int questionIndex)
@@ -51,16 +62,23 @@ public class QuestionManager : MonoBehaviour
     {
         if (choiceIndex == qtsData.questions[currentQuestion].correctChoiceIndex)
         {
-            // Enable Correct reply panel
+            // Enable Correct answer notification and reward
             Correct.gameObject.SetActive(true);
+            Reward.gameObject.SetActive(true);
 
             /* score++;
             scoreText.text = "" + score; */
+
+            IncreaseUserIntelligence();
+            IncreaseUserExperience();
+            
         }
         else
         {
-            // Enable Incorrect reply panel
+            // Enable Incorrect answer notification and consolation
             Incorrect.gameObject.SetActive(true);
+            Consolation.gameObject.SetActive(true);
+            IncreaseUserExperience();
         } 
 
         
@@ -72,6 +90,94 @@ public class QuestionManager : MonoBehaviour
 
         // Next Question
         StartCoroutine(Next());
+    }
+
+    // Read character's intelligence value from the DB and increase it by 1.
+    void IncreaseUserIntelligence() 
+    {
+        // Prefer the signed-in user stored by FirebaseController to avoid null auth timing issues
+        var user = FirebaseController.CurrentUser;
+        if (user == null)
+        {
+            Debug.LogWarning("No Firebase user signed in — intelligence not updated.");
+            return;
+        }
+
+        string uid = user.UserId;
+        var dbRef = FirebaseController.DBreference ?? FirebaseDatabase.DefaultInstance.RootReference;
+        var intelRef = dbRef.Child(usersNode).Child(uid).Child("int");
+
+        intelRef.GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogWarning("Failed to read intelligence: " + task.Exception);
+                return;
+            }
+
+            if (!task.IsCompleted)
+                return;
+
+            long currentValue = 0;
+            var snapshot = task.Result;
+            if (snapshot != null && snapshot.Exists)
+            {
+                long.TryParse(snapshot.Value.ToString(), out currentValue);
+            }
+
+            long newValue = currentValue + 1;
+            intelRef.SetValueAsync(newValue).ContinueWithOnMainThread(setTask =>
+            {
+                if (setTask.IsCompleted)
+                    Debug.Log("Intelligence updated to " + newValue);
+                else
+                    Debug.LogWarning("Failed to set intelligence: " + setTask.Exception);
+            });
+        });
+    }
+
+    // Read character's experience value from the DB and increase it by 20.
+    void IncreaseUserExperience()
+    {
+        // Prefer the signed-in user stored by FirebaseController to avoid null auth timing issues
+        var user = FirebaseController.CurrentUser;
+        if (user == null)
+        {
+            Debug.LogWarning("No Firebase user signed in — intelligence not updated.");
+            return;
+        }
+
+        string uid = user.UserId;
+        var dbRef = FirebaseController.DBreference ?? FirebaseDatabase.DefaultInstance.RootReference;
+        var intelRef = dbRef.Child(usersNode).Child(uid).Child("experience");
+
+        intelRef.GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogWarning("Failed to read experience: " + task.Exception);
+                return;
+            }
+
+            if (!task.IsCompleted)
+                return;
+
+            long currentValue = 0;
+            var snapshot = task.Result;
+            if (snapshot != null && snapshot.Exists)
+            {
+                long.TryParse(snapshot.Value.ToString(), out currentValue);
+            }
+
+            long newValue = currentValue + 20;
+            intelRef.SetValueAsync(newValue).ContinueWithOnMainThread(setTask =>
+            {
+                if (setTask.IsCompleted)
+                    Debug.Log("Experience updated to " + newValue);
+                else
+                    Debug.LogWarning("Failed to set experience: " + setTask.Exception);
+            });
+        });
     }
 
     IEnumerator Next()
@@ -135,7 +241,9 @@ public class QuestionManager : MonoBehaviour
         questionText.text = "";
         /* scoreText.text = "" + score; */
         Correct.gameObject.SetActive(false);
+        Reward.gameObject.SetActive(false);
         Incorrect.gameObject.SetActive(false);
+        Consolation.gameObject.SetActive(false);
 
         // Enable all reply buttons
         foreach (Button c in choiceButtons)

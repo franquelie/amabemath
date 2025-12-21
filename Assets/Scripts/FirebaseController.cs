@@ -22,7 +22,10 @@ public class FirebaseController : MonoBehaviour
 
     Firebase.Auth.FirebaseAuth auth;
     Firebase.Auth.FirebaseUser user;
-    public DatabaseReference DBreference;
+    public static DatabaseReference DBreference;
+
+    // Public static accessor for the currently signed-in Firebase user
+    public static Firebase.Auth.FirebaseUser CurrentUser => Firebase.Auth.FirebaseAuth.DefaultInstance?.CurrentUser;
 
     bool isSignedIn = false;
 
