@@ -80,5 +80,17 @@ crashlytics-build.properties
 /[Aa]ssets/[Pp]lugins/*
 
 # Firebase Security
+google-services.json.meta
 google-services.json
+google-services-desktop.json.meta
 google-services-desktop.json
+
+# Assets Recovery Data
+/assets/_recovery.meta
+/assets/_recovery/
+
+# Temporary files created by Unity
+.plastic/
+.utmp/
+Assets/GeneratedLocalRepo.meta
+Assets/GeneratedLocalRepo/
